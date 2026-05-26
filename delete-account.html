@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BPTracking — Delete your account</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      line-height: 1.6;
+      max-width: 42rem;
+      margin: 2rem auto;
+      padding: 0 1.25rem;
+      color: #1a1a1a;
+      background: #fff;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { color: #e8e8e8; background: #121212; }
+      a { color: #8ab4f8; }
+      .box { background: #1e1e1e; border-color: #333; }
+    }
+    h1 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+    .subtitle { color: #555; margin-top: 0; }
+    @media (prefers-color-scheme: dark) { .subtitle { color: #aaa; } }
+    h2 { font-size: 1.1rem; margin-top: 1.75rem; }
+    ol.steps { padding-left: 1.25rem; }
+    ol.steps li { margin-bottom: 0.75rem; }
+    .box {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      background: #f8f9fa;
+    }
+    table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+    th, td { text-align: left; padding: 0.5rem 0.4rem; border-bottom: 1px solid #ddd; vertical-align: top; }
+    @media (prefers-color-scheme: dark) { th, td { border-color: #333; } }
+    .cta {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.6rem 1rem;
+      background: #1565c0;
+      color: #fff !important;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+    footer { margin-top: 2.5rem; font-size: 0.85rem; color: #666; }
+  </style>
+</head>
+<body>
+  <h1>BPTracking — Account &amp; data deletion</h1>
+  <p class="subtitle">BigProject · Android app <strong>BPTracking</strong> (<code>com.bigproject.BPTracking</code>)</p>
+
+  <p>
+    You can request deletion of your <strong>BPTracking</strong> user account and the personal data
+    linked to it. This page explains how to submit a request and what we delete or keep.
+  </p>
+
+  <div class="box">
+    <h2 style="margin-top:0;">How to request account deletion</h2>
+    <ol class="steps">
+      <li>
+        Use the <strong>same email address</strong> you used to sign in to BPTracking.
+      </li>
+      <li>
+        Send an email to
+        <strong><a id="support-email-link" href="mailto:privacy@bigproject.gr">privacy@bigproject.gr</a></strong>
+        with the subject line: <strong>BPTracking account deletion request</strong>.
+      </li>
+      <li>
+        In the message, include:
+        <ul>
+          <li>Your registered email address</li>
+          <li>Optional: the tracker ID(s) you added in the app (helps us verify your devices)</li>
+          <li>Confirmation that you want your account and associated app data deleted</li>
+        </ul>
+      </li>
+      <li>
+        We will verify that you own the account (reply from the registered email may be required)
+        and process your request within <strong>30 days</strong>.
+      </li>
+      <li>
+        When deletion is complete, we will email you a confirmation (if your address is still reachable).
+      </li>
+    </ol>
+    <a class="cta" id="mailto-cta" href="mailto:contact@caralarms.gr?subject=BPTracking%20account%20deletion%20request&amp;body=Registered%20email%3A%20%0A%0AI%20request%20deletion%20of%20my%20BPTracking%20account%20and%20associated%20data.">
+      Email deletion request
+    </a>
+  </div>
+
+  <h2>Data that is deleted</h2>
+  <p>When your request is approved and processed, we delete account-linked data including:</p>
+  <table>
+    <thead>
+      <tr><th>Data</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Account credentials</strong></td>
+        <td>Your Supabase authentication account (email and password login for BPTracking).</td>
+      </tr>
+      <tr>
+        <td><strong>Profile</strong></td>
+        <td>Display name and profile settings stored in <code>profiles</code>.</td>
+      </tr>
+      <tr>
+        <td><strong>Linked devices</strong></td>
+        <td>Tracker IDs and vehicle labels you saved in the app (<code>devices</code>).</td>
+      </tr>
+      <tr>
+        <td><strong>Push notification tokens</strong></td>
+        <td>FCM device tokens used only to send you alarm notifications (<code>push_tokens</code>).</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Data that may be kept</h2>
+  <table>
+    <thead>
+      <tr><th>Data</th><th>Reason</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>GPS / tracker telemetry</strong></td>
+        <td>
+          Location records in our fleet database (<code>tracker_positions</code>) are stored by
+          <strong>tracker hardware ID</strong>, not by user account. They may remain after your
+          account is deleted because they are generated by the physical GPS device.
+          If you also want historical positions for your tracker(s) removed, say so in your
+          email and list the tracker ID(s).
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Backups</strong></td>
+        <td>
+          Encrypted database backups may retain deleted data for up to <strong>90 days</strong>
+          before automatic purge.
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Legal / fraud prevention</strong></td>
+        <td>
+          We may retain minimal records if required by law or to resolve disputes; any such
+          retention is limited to what is legally necessary.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Retention period</h2>
+  <ul>
+    <li><strong>Deletion requests:</strong> processed within <strong>30 days</strong> of verified identity.</li>
+    <li><strong>Backup copies:</strong> removed within <strong>90 days</strong> after deletion from live systems.</li>
+    <li><strong>Optional tracker history deletion:</strong> if requested, target completion within <strong>30 days</strong> (same as account deletion).</li>
+  </ul>
+
+  <h2>Alternative: remove devices only</h2>
+  <p>
+    To stop using BPTracking without deleting your account, open the app, remove your linked
+    vehicles/devices from the account menu, and sign out. To fully delete the account and
+    profile, use the email steps above.
+  </p>
+
+  <footer>
+    <p>Developer: BigProject · App: BPTracking · Last updated: May 2026</p>
+    <p>Questions about this process: <a href="mailto:privacy@bigproject.gr">privacy@bigproject.gr</a></p>
+  </footer>
+</body>
+</html>
